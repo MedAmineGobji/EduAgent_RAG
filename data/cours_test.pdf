@@ -1,0 +1,172 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 3318 >>
+stream
+BT
+/F1 9 Tf
+  40 801.89 Td
+  (Cours d'Informatique : Algorithmes et Structures de Données) Tj
+  0 0 Td
+  40 789.89 Td
+  () Tj
+  0 0 Td
+  40 777.89 Td
+  (Chapitre 1 : Les Algorithmes de Tri) Tj
+  0 0 Td
+  40 765.89 Td
+  () Tj
+  0 0 Td
+  40 753.89 Td
+  (Un algorithme de tri est une procédure qui réorganise une séquence d'éléments) Tj
+  0 0 Td
+  40 741.89 Td
+  (dans un ordre défini \(croissant ou décroissant\).) Tj
+  0 0 Td
+  40 729.89 Td
+  () Tj
+  0 0 Td
+  40 717.89 Td
+  (Le tri à bulles \(Bubble Sort\) est l'un des algorithmes les plus simples.) Tj
+  0 0 Td
+  40 705.89 Td
+  (Il compare deux éléments adjacents et les échange s'ils sont dans le mauvais ord) Tj
+  0 0 Td
+  40 693.89 Td
+  (re.) Tj
+  0 0 Td
+  40 681.89 Td
+  (Sa complexité temporelle est O\(n²\) dans le pire cas.) Tj
+  0 0 Td
+  40 669.89 Td
+  () Tj
+  0 0 Td
+  40 657.89 Td
+  (Le tri rapide \(Quick Sort\) utilise la stratégie "diviser pour régner".) Tj
+  0 0 Td
+  40 645.89 Td
+  (Il choisit un élément pivot, puis place les éléments plus petits à gauche) Tj
+  0 0 Td
+  40 633.89 Td
+  (et les éléments plus grands à droite. Complexité moyenne : O\(n log n\).) Tj
+  0 0 Td
+  40 621.89 Td
+  () Tj
+  0 0 Td
+  40 609.89 Td
+  (Le tri fusion \(Merge Sort\) divise récursivement le tableau en deux moitiés,) Tj
+  0 0 Td
+  40 597.89 Td
+  (les trie séparément, puis les fusionne. Complexité garantie : O\(n log n\).) Tj
+  0 0 Td
+  40 585.89 Td
+  () Tj
+  0 0 Td
+  40 573.89 Td
+  (Chapitre 2 : Les Structures de Données) Tj
+  0 0 Td
+  40 561.89 Td
+  () Tj
+  0 0 Td
+  40 549.89 Td
+  (Une liste chaînée est une structure de données linéaire.) Tj
+  0 0 Td
+  40 537.89 Td
+  (Chaque noeud contient une valeur et un pointeur vers le noeud suivant.) Tj
+  0 0 Td
+  40 525.89 Td
+  (Les opérations d'insertion et de suppression sont en O\(1\) en tête de liste.) Tj
+  0 0 Td
+  40 513.89 Td
+  () Tj
+  0 0 Td
+  40 501.89 Td
+  (Un arbre binaire est une structure hiérarchique où chaque noeud) Tj
+  0 0 Td
+  40 489.89 Td
+  (possède au plus deux enfants : un fils gauche et un fils droit.) Tj
+  0 0 Td
+  40 477.89 Td
+  (Les arbres binaires de recherche \(ABR\) permettent des recherches en O\(log n\).) Tj
+  0 0 Td
+  40 465.89 Td
+  () Tj
+  0 0 Td
+  40 453.89 Td
+  (Une table de hachage \(hash table\) utilise une fonction de hachage pour) Tj
+  0 0 Td
+  40 441.89 Td
+  (associer des clés à des valeurs. L'accès, l'insertion et la suppression) Tj
+  0 0 Td
+  40 429.89 Td
+  (sont en O\(1\) en moyenne.) Tj
+  0 0 Td
+  40 417.89 Td
+  () Tj
+  0 0 Td
+  40 405.89 Td
+  (Chapitre 3 : La Récursivité) Tj
+  0 0 Td
+  40 393.89 Td
+  () Tj
+  0 0 Td
+  40 381.89 Td
+  (La récursivité est une technique où une fonction s'appelle elle-même.) Tj
+  0 0 Td
+  40 369.89 Td
+  (Elle nécessite toujours un cas de base qui arrête la récursion.) Tj
+  0 0 Td
+  40 357.89 Td
+  () Tj
+  0 0 Td
+  40 345.89 Td
+  (Exemple : calcul du factoriel de n) Tj
+  0 0 Td
+  40 333.89 Td
+  (  factoriel\(0\) = 1  \(cas de base\)) Tj
+  0 0 Td
+  40 321.89 Td
+  (  factoriel\(n\) = n * factoriel\(n-1\)  \(cas récursif\)) Tj
+  0 0 Td
+  40 309.89 Td
+  () Tj
+  0 0 Td
+  40 297.89 Td
+  (La suite de Fibonacci est un exemple classique de récursivité :) Tj
+  0 0 Td
+  40 285.89 Td
+  (  fib\(0\) = 0, fib\(1\) = 1) Tj
+  0 0 Td
+  40 273.89 Td
+  (  fib\(n\) = fib\(n-1\) + fib\(n-2\)) Tj
+  0 0 Td
+  40 261.89 Td
+  () Tj
+  0 0 Td
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000247 00000 n 
+0000003617 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+3687
+%%EOF

@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+*.pyo
+.kilo/
+.qodo/
+.env
+vectorstore/chroma*
+vectorstore/*.sqlite3
+vectorstore/

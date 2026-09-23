@@ -1,0 +1,29 @@
+# ============================================================
+# requirements.txt — Dépendances Python du projet EduAgent RAG
+# ============================================================
+# Pour installer toutes les dépendances, lancez :
+#   pip install -r requirements.txt
+# ============================================================
+
+# --- LangChain (framework principal pour LLM et agents) ---
+langchain
+langchain-community
+langchain-groq
+
+# --- Base de données vectorielle ---
+chromadb
+
+# --- Modèle d'embeddings local (gratuit, sans clé API) ---
+sentence-transformers
+
+# --- Chargement de PDFs ---
+pypdf
+
+# --- Variables d'environnement ---
+python-dotenv
+
+# --- Interface utilisateur ---
+streamlit
+
+# --- Requêtes HTTP ---
+requests

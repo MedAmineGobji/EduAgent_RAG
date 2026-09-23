@@ -1,0 +1,159 @@
+============================================================
+  SCRIPT DE DÉMONSTRATION — EduAgent RAG
+  Durée : ~3 minutes   |   Langue : Français
+============================================================
+
+------------------------------------------------------------
+[INTRODUCTION — 20 secondes]
+------------------------------------------------------------
+
+Bonjour.
+
+Je vais vous présenter EduAgent RAG,
+un assistant intelligent conçu pour aider les étudiants
+à mieux comprendre leurs cours.
+
+------------------------------------------------------------
+[LE PROBLÈME — 25 secondes]
+------------------------------------------------------------
+
+En tant qu'étudiant, on a souvent des questions sur nos cours :
+  "C'est quoi exactement le tri rapide ?"
+  "Je n'ai pas le temps de relire tout le chapitre…"
+  "J'ai besoin de questions pour réviser."
+
+Les LLMs classiques comme ChatGPT peuvent répondre,
+mais ils ne connaissent PAS vos propres documents.
+Ils peuvent inventer des réponses — on appelle ça des "hallucinations".
+
+Notre solution : EduAgent RAG.
+
+------------------------------------------------------------
+[L'OBJECTIF — 15 secondes]
+------------------------------------------------------------
+
+L'objectif est simple :
+donner à l'IA un accès direct à VOS cours PDF,
+pour qu'elle réponde uniquement depuis vos documents,
+et qu'elle choisisse automatiquement le bon outil
+selon ce que vous lui demandez.
+
+------------------------------------------------------------
+[LE PIPELINE RAG — 35 secondes]
+------------------------------------------------------------
+
+RAG signifie "Retrieval-Augmented Generation",
+c'est-à-dire Génération Augmentée par la Récupération.
+
+Voici comment ça marche en 3 étapes :
+
+  Étape 1 — INDEXATION
+    On charge les PDFs, on les découpe en petits morceaux — les "chunks" —
+    et on les transforme en vecteurs numériques avec un modèle HuggingFace.
+    Ces vecteurs sont stockés dans ChromaDB sur le disque.
+
+  Étape 2 — RECHERCHE
+    Quand vous posez une question, elle est aussi transformée en vecteur.
+    ChromaDB retrouve les 4 morceaux de cours les plus proches
+    de votre question par similarité cosinus.
+
+  Étape 3 — GÉNÉRATION
+    Ces morceaux sont envoyés au LLM (Groq / llama-3.1-8b-instant)
+    avec votre question. Le LLM répond uniquement
+    à partir de ce contexte — pas d'invention.
+
+------------------------------------------------------------
+[LE RÔLE DE L'AGENT IA — 20 secondes]
+------------------------------------------------------------
+
+On a ajouté un agent IA par-dessus le RAG.
+
+L'agent IA, c'est le "chef d'orchestre".
+À chaque question, il lit votre demande,
+réfléchit — c'est la phase "Thought" —
+puis choisit automatiquement le bon outil parmi 3.
+
+------------------------------------------------------------
+[LES 3 OUTILS — 20 secondes]
+------------------------------------------------------------
+
+Outil 1 — RAG_Cours
+  Pour toute question sur le contenu du cours.
+  L'agent cherche dans les PDFs indexés.
+
+Outil 2 — Résumé_Texte
+  Quand vous dites "résume ce chapitre" ou "synthétise ce texte".
+  L'outil produit un résumé structuré : idée principale, points clés, à retenir.
+
+Outil 3 — Génération_Quiz
+  Quand vous dites "génère un quiz sur les algorithmes de tri".
+  L'outil crée 5 questions avec réponses détaillées.
+
+------------------------------------------------------------
+[DÉMONSTRATION — 40 secondes]
+------------------------------------------------------------
+
+  --- Exemple 1 : Question sur le cours ---
+
+  Je tape : "Qu'est-ce qu'un arbre binaire ?"
+
+  L'agent choisit automatiquement RAG_Cours.
+  Il cherche dans le PDF, récupère les passages pertinents,
+  et répond : "Un arbre binaire est une structure hiérarchique
+  où chaque noeud possède au plus deux enfants..."
+  En bas, on voit les sources : fichier PDF et numéro de page.
+
+
+  --- Exemple 2 : Résumé ---
+
+  Je tape : "Résume ce texte : La récursivité est une technique..."
+
+  L'agent choisit Résumé_Texte.
+  La réponse est structurée :
+    • Idée principale
+    • Points clés
+    • À retenir
+
+
+  --- Exemple 3 : Quiz ---
+
+  Je tape : "Génère un quiz sur les algorithmes de tri"
+
+  L'agent choisit Génération_Quiz.
+  Il produit 5 questions avec réponses,
+  couvrant différents niveaux : compréhension, application, synthèse.
+
+------------------------------------------------------------
+[CONCLUSION — 15 secondes]
+------------------------------------------------------------
+
+EduAgent RAG combine trois technologies clés :
+  • ChromaDB  — pour stocker et rechercher dans vos cours
+  • HuggingFace — pour les embeddings locaux, sans coût
+  • Groq / LLaMA — pour les réponses rapides et précises
+
+Le tout orchestré par LangChain et présenté via Streamlit.
+
+L'étudiant obtient des réponses fondées sur ses propres documents,
+avec les sources affichées, et l'outil adapté à sa demande.
+
+Merci.
+
+============================================================
+  NOTES POUR LA DÉMO EN DIRECT
+============================================================
+
+Avant de commencer :
+  1. Lancer : python -m streamlit run app.py
+  2. Vérifier que des PDFs sont indexés (bouton sidebar)
+  3. Avoir le navigateur sur l'interface Streamlit
+
+Questions à taper en direct :
+  1. "Qu'est-ce qu'un arbre binaire ?"          → RAG
+  2. "Résume : La récursivité est une technique où une fonction s'appelle elle-même."  → Résumé
+  3. "Génère un quiz sur les algorithmes de tri"  → Quiz
+
+Si la question prend du temps : expliquer le raisonnement ReAct
+  (Thought → Action → Observation → Final Answer)
+
+============================================================
